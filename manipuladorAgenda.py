@@ -166,9 +166,6 @@ def usuario_contato_para_texto(agenda: dict):
 
 
 def agenda_para_txt(nome_arquivo: str, agenda):
-    if not os.path.isfile(nome_arquivo):
-        print(f"❌ Erro: Arquivo '{nome_arquivo}' não encontrado.")
-        return None
     if "txt" not in nome_arquivo:
         nome_arquivo = f"{nome_arquivo}.txt"
     with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
@@ -243,10 +240,10 @@ def manipular_agenda():
             usuario_exclui_contato(agenda)
 
         elif op == 8:
-            nome_arquivo = input("Informe o nome ou caminho do arquivo: ")
+            nome_arquivo = input("Informe o nome do arquivo: ")
             agenda_para_txt(nome_arquivo, agenda)
         elif op == 9:
-            nome_arquivo = input("Informe o nome ou caminho do arquivo: ")
+            nome_arquivo = input("Informe o nome do arquivo: ")
             agenda_para_json(nome_arquivo, agenda)
 
         elif op == 10:
